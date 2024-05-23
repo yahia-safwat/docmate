@@ -7,22 +7,33 @@ import '../models/doctor_model.dart';
 import '../models/doctor_package_model.dart';
 import '../models/doctor_working_hours_model.dart';
 
-class DoctorRemoteDataSource {
+abstract class DoctorRemoteDataSource {
+  Future<List<DoctorCategory>> getDoctorCategories();
+  Future<List<DoctorModel>> getDoctors();
+  Future<List<DoctorModel>> getDoctorsByCategory(String categoryId);
+  Future<DoctorModel> getDoctorById(String doctorId);
+}
+
+class DoctorRemoteDataSourceImpl implements DoctorRemoteDataSource {
+  @override
   Future<List<DoctorCategory>> getDoctorCategories() async {
     // Fetch doctor categories from a remote API or database
     return DoctorCategory.values;
   }
 
+  @override
   Future<List<DoctorModel>> getDoctors() async {
     // Fetch doctors from a remote API or database
     return sampleDoctors;
   }
 
+  @override
   Future<List<DoctorModel>> getDoctorsByCategory(String categoryId) async {
     // Fetch doctors by category from a remote API or database
     return sampleDoctors;
   }
 
+  @override
   Future<DoctorModel> getDoctorById(String doctorId) async {
     // Fetch a doctor by ID from a remote API or database
     return sampleDoctors.firstWhere((doctor) => doctor.id == doctorId);
