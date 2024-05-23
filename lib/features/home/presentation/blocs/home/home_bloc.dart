@@ -32,12 +32,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     categoriesResult.fold(
       (failure) {
-        emit(const HomeState.error('Failed to load doctor categories'));
+        emit(const HomeState.error('Error loading data'));
       },
       (doctorCategories) async {
         doctorsResult.fold(
           (failure) {
-            emit(const HomeState.error('Failed to load nearby doctors'));
+            emit(const HomeState.error('Error loading data'));
           },
           (doctors) {
             emit(HomeState.loaded(
