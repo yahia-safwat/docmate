@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/home_app_bar.dart';
 import '../widgets/home_page_body.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,7 +18,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      // appBar: HomeAppBar(),
+      appBar: HomeAppBar(),
       // bottomNavigationBar: MainNavBar(),
       body: HomePageBody(),
     );
