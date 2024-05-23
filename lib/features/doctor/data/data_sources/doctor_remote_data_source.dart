@@ -43,26 +43,26 @@ class DoctorRemoteDataSourceImpl implements DoctorRemoteDataSource {
 final sampleDoctors = [
   DoctorModel(
     id: '1',
+    name: 'Dr. Ali Osman',
+    bio: 'Dr. Ali Osman is a Dentist.',
+    profileImageUrl:
+        'https://images.unsplash.com/photo-1557683316-973673baf926',
+    category: DoctorCategory.generalSurgery,
+    address: sampleAddresses[0],
+    packages: samplePackages,
+    workingHours: sampleDoctorWorkingHours,
+    rating: 4.8,
+    reviewCount: 340,
+    patientCount: 1200,
+  ),
+  DoctorModel(
+    id: '2',
     name: 'Dr. John Doe',
     bio:
         'Dr. John Doe is a cardiologist in New York, New York and is affiliated with multiple hospitals in the area, including Lenox Hill Hospital and NYU Langone Hospitals. He received his medical degree from University of California San Francisco School of Medicine and has been in practice between 11-20 years. He is one of 102 doctors at Lenox Hill Hospital and one of 102 at NYU Langone Hospitals who specialize in Cardiovascular Disease.',
     profileImageUrl:
         'https://images.unsplash.com/photo-1557683316-973673baf926',
     category: DoctorCategory.familyMedicine,
-    address: sampleAddresses[0],
-    packages: samplePackages,
-    workingHours: sampleDoctorWorkingHours,
-    rating: 4.5,
-    reviewCount: 100,
-    patientCount: 1000,
-  ),
-  DoctorModel(
-    id: '2',
-    name: 'Dr. Jane Doe',
-    bio: 'Dentist',
-    profileImageUrl:
-        'https://images.unsplash.com/photo-1557683316-973673baf926',
-    category: DoctorCategory.generalSurgery,
     address: sampleAddresses[0],
     packages: samplePackages,
     workingHours: sampleDoctorWorkingHours,

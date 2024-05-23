@@ -7,6 +7,7 @@ import '../../features/doctor/domain/usecases/fetch_doctor_by_id.dart';
 import '../../features/doctor/domain/usecases/fetch_doctor_categories.dart';
 import '../../features/doctor/domain/usecases/fetch_doctors.dart';
 import '../../features/doctor/domain/usecases/fetch_doctors_by_category.dart';
+import '../../features/doctor/presentation/blocs/doctor_details/doctor_details_bloc.dart';
 import '../../features/home/presentation/blocs/home/home_bloc.dart';
 
 //! Service Locator Setup
@@ -24,6 +25,7 @@ Future<void> init() async {
         fetchDoctorCategoriesUseCase: sl(),
         fetchDoctorsUseCase: sl(),
       ));
+  sl.registerFactory(() => DoctorDetailsBloc(fetchDoctorByIdUseCase: sl()));
 
   // Use cases
   sl.registerLazySingleton(

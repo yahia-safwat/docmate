@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../core/routes/app_routes.dart';
 import '../../../features/doctor/domain/entities/doctor.dart';
 
 class DoctorListTile extends StatelessWidget {
@@ -17,14 +19,8 @@ class DoctorListTile extends StatelessWidget {
     return ListTile(
       // Add navigation
       onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) {
-        //       return DoctorDetailsScreen(doctorId: doctor.id);
-        //     },
-        //   ),
-        // );
+        context
+            .push(AppRoutes.doctorDetails.replaceFirst(':doctorId', doctor.id));
       },
       contentPadding: EdgeInsets.zero,
       leading: CircleAvatar(

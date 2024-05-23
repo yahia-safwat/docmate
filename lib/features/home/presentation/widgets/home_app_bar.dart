@@ -20,7 +20,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           const SizedBox(height: 4.0),
           Text(
-            'Massimo D',
+            'Ahmed Yahia',
             style: textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 4.0),

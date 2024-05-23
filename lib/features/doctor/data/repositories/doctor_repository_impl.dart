@@ -14,7 +14,7 @@ class DoctorRepositoryImpl implements DoctorRepository {
   Future<Either<Failure, List<DoctorCategory>>> fetchDoctorCategories() async {
     try {
       // Simulate a delay
-      await Future.delayed(const Duration(milliseconds: 1000));
+      await Future.delayed(const Duration(milliseconds: 500));
       // Fetch categories from the remote data source
       final categories = await remoteDataSource.getDoctorCategories();
       return Right(categories);
@@ -28,7 +28,7 @@ class DoctorRepositoryImpl implements DoctorRepository {
   Future<Either<Failure, List<Doctor>>> fetchDoctors() async {
     try {
       // Simulate a delay
-      await Future.delayed(const Duration(milliseconds: 1000));
+      await Future.delayed(const Duration(milliseconds: 500));
       // Fetch doctors from the remote data source
       final doctors = await remoteDataSource.getDoctors();
       return Right(doctors.map((doctor) => doctor.toEntity()).toList());
@@ -43,7 +43,7 @@ class DoctorRepositoryImpl implements DoctorRepository {
       String categoryId) async {
     try {
       // Simulate a delay
-      await Future.delayed(const Duration(milliseconds: 1000));
+      await Future.delayed(const Duration(milliseconds: 300));
       // Fetch doctors by category from the remote data source
       final doctors = await remoteDataSource.getDoctorsByCategory(categoryId);
       return Right(doctors.map((doctor) => doctor.toEntity()).toList());
@@ -57,7 +57,7 @@ class DoctorRepositoryImpl implements DoctorRepository {
   Future<Either<Failure, Doctor>> fetchDoctorById(String doctorId) async {
     try {
       // Simulate a delay
-      await Future.delayed(const Duration(milliseconds: 1000));
+      await Future.delayed(const Duration(milliseconds: 300));
       // Fetch a doctor by ID from the remote data source
       final doctor = await remoteDataSource.getDoctorById(doctorId);
       return Right(doctor.toEntity());
