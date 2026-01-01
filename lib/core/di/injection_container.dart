@@ -22,6 +22,13 @@ import '../../features/doctor/domain/usecases/search_doctors_usecase.dart';
 import '../../features/doctor/domain/usecases/filter_doctors_usecase.dart';
 import '../../features/doctor/presentation/blocs/search/search_bloc.dart';
 import '../../features/auth/presentation/blocs/auth/auth_bloc.dart';
+import '../../features/chat/data/data_sources/chat_remote_data_source.dart';
+import '../../features/chat/data/repositories/chat_repository_impl.dart';
+import '../../features/chat/domain/repositories/chat_repository.dart';
+import '../../features/chat/domain/usecases/get_chats_usecase.dart';
+import '../../features/chat/domain/usecases/get_messages_usecase.dart';
+import '../../features/chat/domain/usecases/send_message_usecase.dart';
+import '../../features/chat/presentation/blocs/chat/chat_bloc.dart';
 import '../../features/auth/presentation/blocs/login/login_bloc.dart';
 import '../../features/appointment/data/data_sources/booking_local_data_source.dart';
 import '../../features/appointment/data/data_sources/booking_remote_data_source.dart';
@@ -65,6 +72,13 @@ Future<void> init() async {
   sl.registerFactory(
     () => SearchBloc(searchDoctors: sl(), filterDoctors: sl()),
   );
+  sl.registerFactory(
+    () => ChatBloc(
+      getChatsUseCase: sl(),
+      getMessagesUseCase: sl(),
+      sendMessageUseCase: sl(),
+    ),
+  );
 
   // Use cases
   sl.registerLazySingleton(
@@ -79,6 +93,9 @@ Future<void> init() async {
   );
   sl.registerLazySingleton(() => SearchDoctorsUseCase(sl()));
   sl.registerLazySingleton(() => FilterDoctorsUseCase(sl()));
+  sl.registerLazySingleton(() => GetChatsUseCase(sl()));
+  sl.registerLazySingleton(() => GetMessagesUseCase(sl()));
+  sl.registerLazySingleton(() => SendMessageUseCase(sl()));
 
   // Booking Use cases
   sl.registerLazySingleton(() => GetAvailableSlotsUseCase(repository: sl()));
@@ -96,6 +113,7 @@ Future<void> init() async {
   sl.registerLazySingleton<DoctorRepository>(
     () => DoctorRepositoryImpl(remoteDataSource: sl()),
   );
+  sl.registerLazySingleton<ChatRepository>(() => ChatRepositoryImpl(sl()));
 
   // Booking Repository
   sl.registerLazySingleton<BookingRepository>(
@@ -110,6 +128,9 @@ Future<void> init() async {
   // Remote Data sources
   sl.registerLazySingleton<DoctorRemoteDataSource>(
     () => DoctorRemoteDataSourceImpl(),
+  );
+  sl.registerLazySingleton<ChatRemoteDataSource>(
+    () => ChatRemoteDataSourceImpl(),
   );
 
   // Booking Data sources

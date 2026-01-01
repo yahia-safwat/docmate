@@ -9,6 +9,9 @@ import '../../features/appointment/presentation/pages/booking_page.dart';
 import '../../features/appointment/presentation/pages/my_appointments_page.dart';
 import '../../features/auth/presentation/blocs/auth/auth_bloc.dart';
 import '../../features/doctor/presentation/pages/global_search_page.dart';
+import '../../features/chat/presentation/pages/chat_list_page.dart';
+import '../../features/chat/presentation/pages/chat_detail_room.dart';
+import '../../features/doctor/domain/entities/doctor.dart';
 import 'app_routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -60,8 +63,21 @@ class AppRouter {
             routes: [
               GoRoute(
                 path: AppRoutes.chat,
-                builder: (context, state) =>
-                    const Scaffold(body: Center(child: Text('Chat Page'))),
+                builder: (context, state) => const ChatListPage(),
+                routes: [
+                  GoRoute(
+                    path: AppRoutes.chatDetail,
+                    name: AppRoutes.chatDetail,
+                    builder: (context, state) {
+                      final chatId = state.pathParameters['chatId']!;
+                      final participant = state.extra as Doctor;
+                      return ChatDetailRoom(
+                        chatId: chatId,
+                        participant: participant,
+                      );
+                    },
+                  ),
+                ],
               ),
             ],
           ),

@@ -42,23 +42,23 @@ This roadmap breaks down the missing features into modular components, following
 
 ---
 
-## 6. Feature: Chat / Communication [/]
+## 6. Feature: Chat / Communication [x]
 **Objective:** Real-time messaging with doctors.
-- **Domain:** `MessageEntity`, `SendMessageUseCase`, `GetMessagesUseCase`.
-- **Data:** `ChatRepositoryImpl`, `ChatRemoteDataSource` (e.g., Firebase).
-- **Presentation:** `ChatBloc`, `ChatListPage`, `ChatDetailRoom`.
+- [x] Domain: `MessageEntity`, `SendMessageUseCase`, `GetMessagesUseCase`.
+- [x] Data: `ChatRepositoryImpl`, `ChatRemoteDataSource` (Mock).
+- [x] Presentation: `ChatBloc`, `ChatListPage`, `ChatDetailRoom`.
 
 ---
 
-## 7. Feature: Notifications
+## 7. Feature: Notifications [/]
 **Objective:** Push and in-app alerts.
-- **Domain:** `NotificationEntity`, `GetNotificationsUseCase`.
-- **Data:** `NotificationRepositoryImpl`.
-- **Presentation:** `NotificationBloc`, `NotificationListPage`.
+- [ ] Domain: `NotificationEntity`, `GetNotificationsUseCase`.
+- [ ] Data: `NotificationRepositoryImpl`.
+- [ ] Presentation: `NotificationBloc`, `NotificationListPage`.
 
 ---
 
 ## Current Focus
 > [!IMPORTANT]
-> **Priority 6: Chat / Communication**
-> We are now implementing the real-time messaging feature between doctors and patients.
+> **Priority 7: Notifications**
+> We are now implementing the notification system to alert users of appointments and messages.
