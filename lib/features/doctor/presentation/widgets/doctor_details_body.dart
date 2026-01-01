@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../core/routes/app_routes.dart';
 import '../../../../common/widgets/cards/doctor_card.dart';
 import '../blocs/doctor_details/doctor_details_bloc.dart';
 import 'doctor_working_hours.dart';
-import '../../../auth/presentation/helpers/auth_guard.dart';
 
 class DoctorDetailsBody extends StatelessWidget {
   const DoctorDetailsBody({super.key});
@@ -34,13 +35,10 @@ class DoctorDetailsBody extends StatelessWidget {
                   width: double.infinity,
                   child: FilledButton(
                     onPressed: () {
-                      context.requireAuth(() {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Booking flow coming soon!'),
-                          ),
-                        );
-                      });
+                      context.pushNamed(
+                        AppRoutes.booking,
+                        pathParameters: {'doctorId': doctor.id},
+                      );
                     },
                     style: FilledButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../core/routes/app_routes.dart';
 
 class MainNavBar extends StatelessWidget {
-  const MainNavBar({super.key});
+  final StatefulNavigationShell navigationShell;
+
+  const MainNavBar({super.key, required this.navigationShell});
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +12,7 @@ class MainNavBar extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return BottomNavigationBar(
+      currentIndex: navigationShell.currentIndex,
       selectedItemColor: colorScheme.primary,
       unselectedItemColor: colorScheme.onSurface.withValues(alpha: 0.5),
       showSelectedLabels: true,
@@ -20,15 +22,10 @@ class MainNavBar extends StatelessWidget {
       unselectedLabelStyle: textTheme.bodySmall,
       type: BottomNavigationBarType.fixed,
       onTap: (index) {
-        switch (index) {
-          case 0:
-            context.go(AppRoutes.home);
-            break;
-          case 4:
-            context.go(AppRoutes.profile);
-            break;
-          default:
-        }
+        navigationShell.goBranch(
+          index,
+          initialLocation: index == navigationShell.currentIndex,
+        );
       },
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Discover'),

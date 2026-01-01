@@ -19,6 +19,12 @@ import '../../features/auth/domain/usecases/logout_usecase.dart';
 import '../../features/auth/domain/usecases/signup_usecase.dart';
 import '../../features/auth/presentation/blocs/auth/auth_bloc.dart';
 import '../../features/auth/presentation/blocs/login/login_bloc.dart';
+import '../../features/appointment/data/data_sources/booking_remote_data_source.dart';
+import '../../features/appointment/data/repositories/booking_repository_impl.dart';
+import '../../features/appointment/domain/repositories/booking_repository.dart';
+import '../../features/appointment/domain/usecases/book_appointment_usecase.dart';
+import '../../features/appointment/domain/usecases/get_available_slots_usecase.dart';
+import '../../features/appointment/presentation/blocs/booking/booking_bloc.dart';
 
 //! Service Locator Setup
 final sl = GetIt.instance;
@@ -41,6 +47,11 @@ Future<void> init() async {
   sl.registerFactory(() => AuthBloc(getAuthenticatedUser: sl(), logout: sl()));
   sl.registerFactory(() => LoginBloc(login: sl()));
 
+  // Booking BLoC
+  sl.registerFactory(
+    () => BookingBloc(getAvailableSlots: sl(), bookAppointment: sl()),
+  );
+
   // Use cases
   sl.registerLazySingleton(
     () => FetchDoctorCategoriesUseCase(doctorRepository: sl()),
@@ -53,6 +64,10 @@ Future<void> init() async {
     () => FetchDoctorsByCategoryUseCase(doctorRepository: sl()),
   );
 
+  // Booking Use cases
+  sl.registerLazySingleton(() => GetAvailableSlotsUseCase(repository: sl()));
+  sl.registerLazySingleton(() => BookAppointmentUseCase(repository: sl()));
+
   // Auth Use cases
   sl.registerLazySingleton(() => LoginUseCase(sl()));
   sl.registerLazySingleton(() => SignupUseCase(sl()));
@@ -64,6 +79,11 @@ Future<void> init() async {
     () => DoctorRepositoryImpl(remoteDataSource: sl()),
   );
 
+  // Booking Repository
+  sl.registerLazySingleton<BookingRepository>(
+    () => BookingRepositoryImpl(remoteDataSource: sl()),
+  );
+
   // Auth Repository
   sl.registerLazySingleton<AuthRepository>(
     () => AuthRepositoryImpl(remoteDataSource: sl(), localDataSource: sl()),
@@ -72,6 +92,11 @@ Future<void> init() async {
   // Remote Data sources
   sl.registerLazySingleton<DoctorRemoteDataSource>(
     () => DoctorRemoteDataSourceImpl(),
+  );
+
+  // Booking Data source
+  sl.registerLazySingleton<BookingRemoteDataSource>(
+    () => BookingRemoteDataSourceImpl(),
   );
 
   // Auth Data sources

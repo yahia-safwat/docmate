@@ -5,53 +5,122 @@ import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/signup_page.dart';
 import '../../features/auth/presentation/pages/profile_page.dart';
 import '../../features/auth/presentation/pages/settings_page.dart';
+import '../../features/appointment/presentation/pages/booking_page.dart';
 import '../../features/auth/presentation/blocs/auth/auth_bloc.dart';
 import 'app_routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../common/widgets/scaffolds/main_scaffold.dart';
+
 class AppRouter {
+  static final _rootNavigatorKey = GlobalKey<NavigatorState>();
+
   static GoRouter router = GoRouter(
+    navigatorKey: _rootNavigatorKey,
+    initialLocation: AppRoutes.home,
     routes: [
-      GoRoute(
-        path: AppRoutes.home,
-        name: AppRoutes.home,
-        builder: (context, state) => const HomePage(),
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) {
+          return MainScaffold(navigationShell: navigationShell);
+        },
+        branches: [
+          // Branch for Home/Discover
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.home,
+                name: AppRoutes.home,
+                builder: (context, state) => const HomePage(),
+              ),
+            ],
+          ),
+          // Branch for Explore
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.explore,
+                builder: (context, state) =>
+                    const Scaffold(body: Center(child: Text('Explore Page'))),
+              ),
+            ],
+          ),
+          // Branch for Booking Tab (My Appointments)
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.myAppointments,
+                builder: (context, state) => const Scaffold(
+                  body: Center(child: Text('My Appointments Page')),
+                ),
+              ),
+            ],
+          ),
+          // Branch for Chat
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.chat,
+                builder: (context, state) =>
+                    const Scaffold(body: Center(child: Text('Chat Page'))),
+              ),
+            ],
+          ),
+          // Branch for Profile
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.profile,
+                name: AppRoutes.profile,
+                builder: (context, state) => const ProfilePage(),
+              ),
+            ],
+          ),
+        ],
       ),
+      // Auth Routes (Top level to hide bottom bar)
       GoRoute(
         path: AppRoutes.login,
         name: AppRoutes.login,
+        parentNavigatorKey: _rootNavigatorKey,
         builder: (context, state) => const LoginPage(),
       ),
       GoRoute(
         path: AppRoutes.signup,
         name: AppRoutes.signup,
+        parentNavigatorKey: _rootNavigatorKey,
         builder: (context, state) => const SignupPage(),
       ),
+      // Details & Sub-pages
       GoRoute(
         path: AppRoutes.doctorDetails,
         name: AppRoutes.doctorDetails,
+        parentNavigatorKey: _rootNavigatorKey,
         builder: (context, state) {
           final doctorId = state.pathParameters['doctorId']!;
           return DoctorDetailsPage(doctorId: doctorId);
         },
       ),
       GoRoute(
-        path: AppRoutes.profile,
-        name: AppRoutes.profile,
-        builder: (context, state) => const ProfilePage(),
-      ),
-      GoRoute(
         path: AppRoutes.settings,
         name: AppRoutes.settings,
+        parentNavigatorKey: _rootNavigatorKey,
         builder: (context, state) => const SettingsPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.booking,
+        name: AppRoutes.booking,
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) {
+          final doctorId = state.pathParameters['doctorId']!;
+          return BookingPage(doctorId: doctorId);
+        },
       ),
     ],
     redirect: (context, state) {
       final authState = context.read<AuthBloc>().state;
       final isLoggingIn = state.matchedLocation == AppRoutes.login;
 
-      // We only redirect away from login if already authenticated
       if (authState is AuthAuthenticated && isLoggingIn) {
         return AppRoutes.home;
       }

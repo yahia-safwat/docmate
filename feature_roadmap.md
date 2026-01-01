@@ -10,19 +10,19 @@ This roadmap breaks down the missing features into modular components, following
 
 ---
 
-## 2. Feature: User Profile & Settings [/]
+## 2. Feature: User Profile & Settings [x]
 **Objective:** Manage user data and app preferences.
-- [ ] Domain: `UserEntity`, `UpdateProfileUseCase`.
-- [ ] Data: `UserRepositoryImpl`, `UserLocalDataSource`.
-- [ ] Presentation: `ProfileBloc`, `ProfilePage`, `SettingsPage`.
+- [x] Domain: `UserEntity` (via Auth)
+- [x] Data: `UserRepositoryImpl` (Integrated with Auth)
+- [x] Presentation: `ProfilePage`, `SettingsPage`.
 
 ---
 
-## 3. Feature: Appointment Booking
+## 3. Feature: Appointment Booking [/]
 **Objective:** End-to-end flow for picking slots and confirming appointments.
-- **Domain:** `BookingUseCase`, `GetAvailableSlotsUseCase`.
-- **Data:** `BookingRepositoryImpl`, `AppointmentDataSource`.
-- **Presentation:** `BookingBloc`, `SlotSelectionPage`, `BookingConfirmationPage`, `BookingStatusScreen`.
+- [ ] Domain: `BookingUseCase`, `GetAvailableSlotsUseCase`.
+- [ ] Data: `BookingRepositoryImpl`, `AppointmentDataSource`.
+- [ ] Presentation: `BookingBloc`, `SlotSelectionPage`, `BookingConfirmationPage`, `BookingStatusScreen`.
 
 ---
 
@@ -60,5 +60,5 @@ This roadmap breaks down the missing features into modular components, following
 
 ## Current Focus
 > [!IMPORTANT]
-> **Priority 2: User Profile & Settings**
-> We are now implementing the user profile management and settings to allow users to view their session data and customize the app.
+> **Priority 3: Appointment Booking**
+> We are now implementing the end-to-end booking flow, starting from slot selection to booking confirmation.

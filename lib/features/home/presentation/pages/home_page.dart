@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../common/widgets/bottom_nav_bars/main_nav_bar.dart';
 import '../widgets/home_app_bar.dart';
 import '../widgets/home_page_body.dart';
 
@@ -18,10 +17,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: HomeAppBar(),
-      bottomNavigationBar: MainNavBar(),
-      body: HomePageBody(),
-    );
+    return const Scaffold(appBar: HomeAppBar(), body: HomePageBody());
   }
 }
