@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../common/widgets/cards/doctor_card.dart';
 import '../blocs/doctor_details/doctor_details_bloc.dart';
 import 'doctor_working_hours.dart';
+import '../../../auth/presentation/helpers/auth_guard.dart';
 
 class DoctorDetailsBody extends StatelessWidget {
   const DoctorDetailsBody({super.key});
@@ -28,6 +29,29 @@ class DoctorDetailsBody extends StatelessWidget {
                   color: colorScheme.surfaceContainerHighest,
                 ),
                 DoctorWorkingHoursView(workingHours: doctor.workingHours),
+                const SizedBox(height: 16.0),
+                SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                    onPressed: () {
+                      context.requireAuth(() {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Booking flow coming soon!'),
+                          ),
+                        );
+                      });
+                    },
+                    style: FilledButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6.0),
+                      ),
+                    ),
+                    child: const Text('Book Now'),
+                  ),
+                ),
+                const SizedBox(height: 8.0),
               ],
             ),
           ),

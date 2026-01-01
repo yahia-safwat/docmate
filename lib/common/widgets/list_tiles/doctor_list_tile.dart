@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/routes/app_routes.dart';
 import '../../../features/doctor/domain/entities/doctor.dart';
+import '../../../../features/auth/presentation/helpers/auth_guard.dart';
 
 class DoctorListTile extends StatelessWidget {
   const DoctorListTile({super.key, required this.doctor});
@@ -68,7 +69,16 @@ class DoctorListTile extends StatelessWidget {
           ),
         ],
       ),
-      trailing: FilledButton(onPressed: () {}, child: const Text('Book Now')),
+      trailing: FilledButton(
+        onPressed: () {
+          context.requireAuth(() {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Booking flow coming soon!')),
+            );
+          });
+        },
+        child: const Text('Book Now'),
+      ),
     );
   }
 }

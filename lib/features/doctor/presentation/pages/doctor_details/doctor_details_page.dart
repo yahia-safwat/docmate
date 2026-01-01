@@ -14,8 +14,9 @@ class DoctorDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => di.sl<DoctorDetailsBloc>()
-        ..add(DoctorDetailsEvent.loadDoctorDetails(doctorId)),
+      create: (context) =>
+          di.sl<DoctorDetailsBloc>()
+            ..add(DoctorDetailsEvent.loadDoctorDetails(doctorId)),
       child: const DoctorDetailsView(),
     );
   }
@@ -40,12 +41,7 @@ class DoctorDetailsView extends StatelessWidget {
           'Doctor Details',
           style: textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
         ),
-        actions: [
-          AppIconButton(
-            icon: Icons.favorite_outline,
-            onTap: () {},
-          )
-        ],
+        actions: [AppIconButton(icon: Icons.favorite_outline, onTap: () {})],
       ),
       body: const DoctorDetailsBody(),
     );

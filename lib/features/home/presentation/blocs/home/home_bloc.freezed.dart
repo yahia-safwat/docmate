@@ -12,42 +12,37 @@ part of 'home_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loadHome,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loadHome,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loadHome,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadHome value) loadHome,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadHome value)? loadHome,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadHome value)? loadHome,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -65,13 +60,17 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 abstract class _$$LoadHomeImplCopyWith<$Res> {
   factory _$$LoadHomeImplCopyWith(
-          _$LoadHomeImpl value, $Res Function(_$LoadHomeImpl) then) =
-      __$$LoadHomeImplCopyWithImpl<$Res>;
+    _$LoadHomeImpl value,
+    $Res Function(_$LoadHomeImpl) then,
+  ) = __$$LoadHomeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -79,8 +78,12 @@ class __$$LoadHomeImplCopyWithImpl<$Res>
     extends _$HomeEventCopyWithImpl<$Res, _$LoadHomeImpl>
     implements _$$LoadHomeImplCopyWith<$Res> {
   __$$LoadHomeImplCopyWithImpl(
-      _$LoadHomeImpl _value, $Res Function(_$LoadHomeImpl) _then)
-      : super(_value, _then);
+    _$LoadHomeImpl _value,
+    $Res Function(_$LoadHomeImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -169,49 +172,53 @@ mixin _$HomeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)
-        loaded,
+    required TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )
+    loaded,
     required TResult Function(dynamic message) error,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult? Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult? Function(dynamic message)? error,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult Function(dynamic message)? error,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -219,8 +226,7 @@ mixin _$HomeState {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -238,13 +244,17 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+    _$InitialImpl value,
+    $Res Function(_$InitialImpl) then,
+  ) = __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -252,8 +262,12 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
+    _$InitialImpl _value,
+    $Res Function(_$InitialImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -280,9 +294,12 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)
-        loaded,
+    required TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )
+    loaded,
     required TResult Function(dynamic message) error,
   }) {
     return initial();
@@ -293,9 +310,12 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult? Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult? Function(dynamic message)? error,
   }) {
     return initial?.call();
@@ -306,9 +326,12 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult Function(dynamic message)? error,
     required TResult orElse(),
   }) {
@@ -363,8 +386,9 @@ abstract class _Initial implements HomeState {
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
   factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+    _$LoadingImpl value,
+    $Res Function(_$LoadingImpl) then,
+  ) = __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -372,8 +396,12 @@ class __$$LoadingImplCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
-      : super(_value, _then);
+    _$LoadingImpl _value,
+    $Res Function(_$LoadingImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -400,9 +428,12 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)
-        loaded,
+    required TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )
+    loaded,
     required TResult Function(dynamic message) error,
   }) {
     return loading();
@@ -413,9 +444,12 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult? Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult? Function(dynamic message)? error,
   }) {
     return loading?.call();
@@ -426,9 +460,12 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult Function(dynamic message)? error,
     required TResult orElse(),
   }) {
@@ -483,13 +520,15 @@ abstract class _Loading implements HomeState {
 /// @nodoc
 abstract class _$$LoadedImplCopyWith<$Res> {
   factory _$$LoadedImplCopyWith(
-          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
-      __$$LoadedImplCopyWithImpl<$Res>;
+    _$LoadedImpl value,
+    $Res Function(_$LoadedImpl) then,
+  ) = __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {List<DoctorCategory> doctorCategories,
-      List<Doctor> nearbyDoctors,
-      List<dynamic> myAppointments});
+  $Res call({
+    List<DoctorCategory> doctorCategories,
+    List<Doctor> nearbyDoctors,
+    List<dynamic> myAppointments,
+  });
 }
 
 /// @nodoc
@@ -497,9 +536,12 @@ class __$$LoadedImplCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
-      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
-      : super(_value, _then);
+    _$LoadedImpl _value,
+    $Res Function(_$LoadedImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -507,33 +549,35 @@ class __$$LoadedImplCopyWithImpl<$Res>
     Object? nearbyDoctors = null,
     Object? myAppointments = null,
   }) {
-    return _then(_$LoadedImpl(
-      doctorCategories: null == doctorCategories
-          ? _value._doctorCategories
-          : doctorCategories // ignore: cast_nullable_to_non_nullable
-              as List<DoctorCategory>,
-      nearbyDoctors: null == nearbyDoctors
-          ? _value._nearbyDoctors
-          : nearbyDoctors // ignore: cast_nullable_to_non_nullable
-              as List<Doctor>,
-      myAppointments: null == myAppointments
-          ? _value._myAppointments
-          : myAppointments // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-    ));
+    return _then(
+      _$LoadedImpl(
+        doctorCategories: null == doctorCategories
+            ? _value._doctorCategories
+            : doctorCategories // ignore: cast_nullable_to_non_nullable
+                  as List<DoctorCategory>,
+        nearbyDoctors: null == nearbyDoctors
+            ? _value._nearbyDoctors
+            : nearbyDoctors // ignore: cast_nullable_to_non_nullable
+                  as List<Doctor>,
+        myAppointments: null == myAppointments
+            ? _value._myAppointments
+            : myAppointments // ignore: cast_nullable_to_non_nullable
+                  as List<dynamic>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(
-      {required final List<DoctorCategory> doctorCategories,
-      required final List<Doctor> nearbyDoctors,
-      required final List<dynamic> myAppointments})
-      : _doctorCategories = doctorCategories,
-        _nearbyDoctors = nearbyDoctors,
-        _myAppointments = myAppointments;
+  const _$LoadedImpl({
+    required final List<DoctorCategory> doctorCategories,
+    required final List<Doctor> nearbyDoctors,
+    required final List<dynamic> myAppointments,
+  }) : _doctorCategories = doctorCategories,
+       _nearbyDoctors = nearbyDoctors,
+       _myAppointments = myAppointments;
 
   final List<DoctorCategory> _doctorCategories;
   @override
@@ -570,22 +614,31 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._doctorCategories, _doctorCategories) &&
-            const DeepCollectionEquality()
-                .equals(other._nearbyDoctors, _nearbyDoctors) &&
-            const DeepCollectionEquality()
-                .equals(other._myAppointments, _myAppointments));
+            const DeepCollectionEquality().equals(
+              other._doctorCategories,
+              _doctorCategories,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._nearbyDoctors,
+              _nearbyDoctors,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._myAppointments,
+              _myAppointments,
+            ));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_doctorCategories),
-      const DeepCollectionEquality().hash(_nearbyDoctors),
-      const DeepCollectionEquality().hash(_myAppointments));
+    runtimeType,
+    const DeepCollectionEquality().hash(_doctorCategories),
+    const DeepCollectionEquality().hash(_nearbyDoctors),
+    const DeepCollectionEquality().hash(_myAppointments),
+  );
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
@@ -596,9 +649,12 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)
-        loaded,
+    required TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )
+    loaded,
     required TResult Function(dynamic message) error,
   }) {
     return loaded(doctorCategories, nearbyDoctors, myAppointments);
@@ -609,9 +665,12 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult? Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult? Function(dynamic message)? error,
   }) {
     return loaded?.call(doctorCategories, nearbyDoctors, myAppointments);
@@ -622,9 +681,12 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult Function(dynamic message)? error,
     required TResult orElse(),
   }) {
@@ -673,15 +735,19 @@ class _$LoadedImpl implements _Loaded {
 }
 
 abstract class _Loaded implements HomeState {
-  const factory _Loaded(
-      {required final List<DoctorCategory> doctorCategories,
-      required final List<Doctor> nearbyDoctors,
-      required final List<dynamic> myAppointments}) = _$LoadedImpl;
+  const factory _Loaded({
+    required final List<DoctorCategory> doctorCategories,
+    required final List<Doctor> nearbyDoctors,
+    required final List<dynamic> myAppointments,
+  }) = _$LoadedImpl;
 
   List<DoctorCategory> get doctorCategories;
   List<Doctor> get nearbyDoctors;
   List<dynamic> get myAppointments;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -689,8 +755,9 @@ abstract class _Loaded implements HomeState {
 /// @nodoc
 abstract class _$$ErrorImplCopyWith<$Res> {
   factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
+    _$ErrorImpl value,
+    $Res Function(_$ErrorImpl) then,
+  ) = __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({dynamic message});
 }
@@ -700,17 +767,16 @@ class __$$ErrorImplCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
-      : super(_value, _then);
+    _$ErrorImpl _value,
+    $Res Function(_$ErrorImpl) _then,
+  ) : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = freezed,
-  }) {
-    return _then(_$ErrorImpl(
-      freezed == message ? _value.message! : message,
-    ));
+  $Res call({Object? message = freezed}) {
+    return _then(_$ErrorImpl(freezed == message ? _value.message! : message));
   }
 }
 
@@ -739,7 +805,9 @@ class _$ErrorImpl implements _Error {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -750,9 +818,12 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)
-        loaded,
+    required TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )
+    loaded,
     required TResult Function(dynamic message) error,
   }) {
     return error(message);
@@ -763,9 +834,12 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult? Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult? Function(dynamic message)? error,
   }) {
     return error?.call(message);
@@ -776,9 +850,12 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<DoctorCategory> doctorCategories,
-            List<Doctor> nearbyDoctors, List<dynamic> myAppointments)?
-        loaded,
+    TResult Function(
+      List<DoctorCategory> doctorCategories,
+      List<Doctor> nearbyDoctors,
+      List<dynamic> myAppointments,
+    )?
+    loaded,
     TResult Function(dynamic message)? error,
     required TResult orElse(),
   }) {
@@ -830,7 +907,10 @@ abstract class _Error implements HomeState {
   const factory _Error(final dynamic message) = _$ErrorImpl;
 
   dynamic get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
