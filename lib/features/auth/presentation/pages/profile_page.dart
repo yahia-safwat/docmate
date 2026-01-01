@@ -54,7 +54,7 @@ class ProfilePage extends StatelessWidget {
                 _ProfileTile(
                   icon: Icons.calendar_today_outlined,
                   title: 'My Appointments',
-                  onTap: () {},
+                  onTap: () => context.push(AppRoutes.myAppointments),
                   enabled: isAuthenticated,
                 ),
                 _ProfileTile(

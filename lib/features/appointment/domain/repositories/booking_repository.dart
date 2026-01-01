@@ -12,4 +12,8 @@ abstract class BookingRepository {
   Future<Either<Failure, Appointment>> bookAppointment({
     required Appointment appointment,
   });
+
+  Future<Either<Failure, List<Appointment>>> getAppointments();
+
+  Future<Either<Failure, void>> cancelAppointment(String id);
 }

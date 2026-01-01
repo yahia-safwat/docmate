@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../models/user_model.dart';
 
 abstract class AuthLocalDataSource {
@@ -7,21 +9,28 @@ abstract class AuthLocalDataSource {
 }
 
 class AuthLocalDataSourceImpl implements AuthLocalDataSource {
-  // This will eventually use shared_preferences or a secure storage.
-  UserModel? _cachedUser;
+  static const String _userKey = 'cached_user';
+  final SharedPreferences sharedPreferences;
+
+  AuthLocalDataSourceImpl({required this.sharedPreferences});
 
   @override
   Future<void> cacheUser(UserModel user) async {
-    _cachedUser = user;
+    final userJson = json.encode(user.toJson());
+    await sharedPreferences.setString(_userKey, userJson);
   }
 
   @override
   Future<void> clearCache() async {
-    _cachedUser = null;
+    await sharedPreferences.remove(_userKey);
   }
 
   @override
   Future<UserModel?> getCachedUser() async {
-    return _cachedUser;
+    final userJson = sharedPreferences.getString(_userKey);
+    if (userJson != null) {
+      return UserModel.fromJson(json.decode(userJson));
+    }
+    return null;
   }
 }

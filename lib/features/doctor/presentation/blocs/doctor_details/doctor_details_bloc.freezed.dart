@@ -12,8 +12,7 @@ part of 'doctor_details_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DoctorDetailsEvent {
@@ -21,33 +20,37 @@ mixin _$DoctorDetailsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String doctorId) loadDoctorDetails,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String doctorId)? loadDoctorDetails,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String doctorId)? loadDoctorDetails,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadDoctorDetails value) loadDoctorDetails,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadDoctorDetails value)? loadDoctorDetails,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadDoctorDetails value)? loadDoctorDetails,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 
-  /// Create a copy of DoctorDetailsEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $DoctorDetailsEventCopyWith<DoctorDetailsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,9 +58,8 @@ mixin _$DoctorDetailsEvent {
 /// @nodoc
 abstract class $DoctorDetailsEventCopyWith<$Res> {
   factory $DoctorDetailsEventCopyWith(
-    DoctorDetailsEvent value,
-    $Res Function(DoctorDetailsEvent) then,
-  ) = _$DoctorDetailsEventCopyWithImpl<$Res, DoctorDetailsEvent>;
+          DoctorDetailsEvent value, $Res Function(DoctorDetailsEvent) then) =
+      _$DoctorDetailsEventCopyWithImpl<$Res, DoctorDetailsEvent>;
   @useResult
   $Res call({String doctorId});
 }
@@ -72,30 +74,26 @@ class _$DoctorDetailsEventCopyWithImpl<$Res, $Val extends DoctorDetailsEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of DoctorDetailsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? doctorId = null}) {
-    return _then(
-      _value.copyWith(
-            doctorId: null == doctorId
-                ? _value.doctorId
-                : doctorId // ignore: cast_nullable_to_non_nullable
-                      as String,
-          )
-          as $Val,
-    );
+  $Res call({
+    Object? doctorId = null,
+  }) {
+    return _then(_value.copyWith(
+      doctorId: null == doctorId
+          ? _value.doctorId
+          : doctorId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$LoadDoctorDetailsImplCopyWith<$Res>
     implements $DoctorDetailsEventCopyWith<$Res> {
-  factory _$$LoadDoctorDetailsImplCopyWith(
-    _$LoadDoctorDetailsImpl value,
-    $Res Function(_$LoadDoctorDetailsImpl) then,
-  ) = __$$LoadDoctorDetailsImplCopyWithImpl<$Res>;
+  factory _$$LoadDoctorDetailsImplCopyWith(_$LoadDoctorDetailsImpl value,
+          $Res Function(_$LoadDoctorDetailsImpl) then) =
+      __$$LoadDoctorDetailsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String doctorId});
@@ -105,24 +103,21 @@ abstract class _$$LoadDoctorDetailsImplCopyWith<$Res>
 class __$$LoadDoctorDetailsImplCopyWithImpl<$Res>
     extends _$DoctorDetailsEventCopyWithImpl<$Res, _$LoadDoctorDetailsImpl>
     implements _$$LoadDoctorDetailsImplCopyWith<$Res> {
-  __$$LoadDoctorDetailsImplCopyWithImpl(
-    _$LoadDoctorDetailsImpl _value,
-    $Res Function(_$LoadDoctorDetailsImpl) _then,
-  ) : super(_value, _then);
+  __$$LoadDoctorDetailsImplCopyWithImpl(_$LoadDoctorDetailsImpl _value,
+      $Res Function(_$LoadDoctorDetailsImpl) _then)
+      : super(_value, _then);
 
-  /// Create a copy of DoctorDetailsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? doctorId = null}) {
-    return _then(
-      _$LoadDoctorDetailsImpl(
-        null == doctorId
-            ? _value.doctorId
-            : doctorId // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? doctorId = null,
+  }) {
+    return _then(_$LoadDoctorDetailsImpl(
+      null == doctorId
+          ? _value.doctorId
+          : doctorId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -151,16 +146,12 @@ class _$LoadDoctorDetailsImpl implements _LoadDoctorDetails {
   @override
   int get hashCode => Object.hash(runtimeType, doctorId);
 
-  /// Create a copy of DoctorDetailsEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadDoctorDetailsImplCopyWith<_$LoadDoctorDetailsImpl> get copyWith =>
       __$$LoadDoctorDetailsImplCopyWithImpl<_$LoadDoctorDetailsImpl>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -225,11 +216,8 @@ abstract class _LoadDoctorDetails implements DoctorDetailsEvent {
 
   @override
   String get doctorId;
-
-  /// Create a copy of DoctorDetailsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LoadDoctorDetailsImplCopyWith<_$LoadDoctorDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -242,14 +230,16 @@ mixin _$DoctorDetailsState {
     required TResult Function() loading,
     required TResult Function(Doctor doctor) loaded,
     required TResult Function(String errMsg) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(Doctor doctor)? loaded,
     TResult? Function(String errMsg)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -257,21 +247,24 @@ mixin _$DoctorDetailsState {
     TResult Function(Doctor doctor)? loaded,
     TResult Function(String errMsg)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -279,15 +272,15 @@ mixin _$DoctorDetailsState {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DoctorDetailsStateCopyWith<$Res> {
   factory $DoctorDetailsStateCopyWith(
-    DoctorDetailsState value,
-    $Res Function(DoctorDetailsState) then,
-  ) = _$DoctorDetailsStateCopyWithImpl<$Res, DoctorDetailsState>;
+          DoctorDetailsState value, $Res Function(DoctorDetailsState) then) =
+      _$DoctorDetailsStateCopyWithImpl<$Res, DoctorDetailsState>;
 }
 
 /// @nodoc
@@ -299,17 +292,13 @@ class _$DoctorDetailsStateCopyWithImpl<$Res, $Val extends DoctorDetailsState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of DoctorDetailsState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl value,
-    $Res Function(_$InitialImpl) then,
-  ) = __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -317,12 +306,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     extends _$DoctorDetailsStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl _value,
-    $Res Function(_$InitialImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of DoctorDetailsState
-  /// with the given fields replaced by the non-null parameter values.
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -426,9 +411,8 @@ abstract class _Initial implements DoctorDetailsState {
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
   factory _$$LoadingImplCopyWith(
-    _$LoadingImpl value,
-    $Res Function(_$LoadingImpl) then,
-  ) = __$$LoadingImplCopyWithImpl<$Res>;
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -436,12 +420,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
     extends _$DoctorDetailsStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
-    _$LoadingImpl _value,
-    $Res Function(_$LoadingImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of DoctorDetailsState
-  /// with the given fields replaced by the non-null parameter values.
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -545,9 +525,8 @@ abstract class _Loading implements DoctorDetailsState {
 /// @nodoc
 abstract class _$$LoadedImplCopyWith<$Res> {
   factory _$$LoadedImplCopyWith(
-    _$LoadedImpl value,
-    $Res Function(_$LoadedImpl) then,
-  ) = __$$LoadedImplCopyWithImpl<$Res>;
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Doctor doctor});
 }
@@ -557,23 +536,20 @@ class __$$LoadedImplCopyWithImpl<$Res>
     extends _$DoctorDetailsStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
-    _$LoadedImpl _value,
-    $Res Function(_$LoadedImpl) _then,
-  ) : super(_value, _then);
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+      : super(_value, _then);
 
-  /// Create a copy of DoctorDetailsState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? doctor = null}) {
-    return _then(
-      _$LoadedImpl(
-        doctor: null == doctor
-            ? _value.doctor
-            : doctor // ignore: cast_nullable_to_non_nullable
-                  as Doctor,
-      ),
-    );
+  $Res call({
+    Object? doctor = null,
+  }) {
+    return _then(_$LoadedImpl(
+      doctor: null == doctor
+          ? _value.doctor
+          : doctor // ignore: cast_nullable_to_non_nullable
+              as Doctor,
+    ));
   }
 }
 
@@ -601,9 +577,7 @@ class _$LoadedImpl implements _Loaded {
   @override
   int get hashCode => Object.hash(runtimeType, doctor);
 
-  /// Create a copy of DoctorDetailsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
@@ -688,10 +662,7 @@ abstract class _Loaded implements DoctorDetailsState {
   const factory _Loaded({required final Doctor doctor}) = _$LoadedImpl;
 
   Doctor get doctor;
-
-  /// Create a copy of DoctorDetailsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -699,9 +670,8 @@ abstract class _Loaded implements DoctorDetailsState {
 /// @nodoc
 abstract class _$$ErrorImplCopyWith<$Res> {
   factory _$$ErrorImplCopyWith(
-    _$ErrorImpl value,
-    $Res Function(_$ErrorImpl) then,
-  ) = __$$ErrorImplCopyWithImpl<$Res>;
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String errMsg});
 }
@@ -711,23 +681,20 @@ class __$$ErrorImplCopyWithImpl<$Res>
     extends _$DoctorDetailsStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
-    _$ErrorImpl _value,
-    $Res Function(_$ErrorImpl) _then,
-  ) : super(_value, _then);
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+      : super(_value, _then);
 
-  /// Create a copy of DoctorDetailsState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? errMsg = null}) {
-    return _then(
-      _$ErrorImpl(
-        errMsg: null == errMsg
-            ? _value.errMsg
-            : errMsg // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? errMsg = null,
+  }) {
+    return _then(_$ErrorImpl(
+      errMsg: null == errMsg
+          ? _value.errMsg
+          : errMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -755,9 +722,7 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, errMsg);
 
-  /// Create a copy of DoctorDetailsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -842,10 +807,7 @@ abstract class _Error implements DoctorDetailsState {
   const factory _Error({required final String errMsg}) = _$ErrorImpl;
 
   String get errMsg;
-
-  /// Create a copy of DoctorDetailsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

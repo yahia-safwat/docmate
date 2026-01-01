@@ -1,0 +1,61 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'appointment_status.dart';
+
+// **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class AppointmentStatusAdapter extends TypeAdapter<AppointmentStatus> {
+  @override
+  final int typeId = 1;
+
+  @override
+  AppointmentStatus read(BinaryReader reader) {
+    switch (reader.readByte()) {
+      case 0:
+        return AppointmentStatus.pending;
+      case 1:
+        return AppointmentStatus.accepted;
+      case 2:
+        return AppointmentStatus.rejected;
+      case 3:
+        return AppointmentStatus.completed;
+      case 4:
+        return AppointmentStatus.cancelled;
+      default:
+        return AppointmentStatus.pending;
+    }
+  }
+
+  @override
+  void write(BinaryWriter writer, AppointmentStatus obj) {
+    switch (obj) {
+      case AppointmentStatus.pending:
+        writer.writeByte(0);
+        break;
+      case AppointmentStatus.accepted:
+        writer.writeByte(1);
+        break;
+      case AppointmentStatus.rejected:
+        writer.writeByte(2);
+        break;
+      case AppointmentStatus.completed:
+        writer.writeByte(3);
+        break;
+      case AppointmentStatus.cancelled:
+        writer.writeByte(4);
+        break;
+    }
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is AppointmentStatusAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}

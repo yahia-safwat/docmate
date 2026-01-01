@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/doctor/data/data_sources/doctor_remote_data_source.dart';
 import '../../features/doctor/data/repositories/doctor_repository_impl.dart';
@@ -19,12 +20,16 @@ import '../../features/auth/domain/usecases/logout_usecase.dart';
 import '../../features/auth/domain/usecases/signup_usecase.dart';
 import '../../features/auth/presentation/blocs/auth/auth_bloc.dart';
 import '../../features/auth/presentation/blocs/login/login_bloc.dart';
+import '../../features/appointment/data/data_sources/booking_local_data_source.dart';
 import '../../features/appointment/data/data_sources/booking_remote_data_source.dart';
 import '../../features/appointment/data/repositories/booking_repository_impl.dart';
 import '../../features/appointment/domain/repositories/booking_repository.dart';
 import '../../features/appointment/domain/usecases/book_appointment_usecase.dart';
+import '../../features/appointment/domain/usecases/cancel_appointment_usecase.dart';
+import '../../features/appointment/domain/usecases/get_appointments_usecase.dart';
 import '../../features/appointment/domain/usecases/get_available_slots_usecase.dart';
 import '../../features/appointment/presentation/blocs/booking/booking_bloc.dart';
+import '../../features/appointment/presentation/blocs/my_appointments/my_appointments_bloc.dart';
 
 //! Service Locator Setup
 final sl = GetIt.instance;
@@ -51,6 +56,9 @@ Future<void> init() async {
   sl.registerFactory(
     () => BookingBloc(getAvailableSlots: sl(), bookAppointment: sl()),
   );
+  sl.registerFactory(
+    () => MyAppointmentsBloc(getAppointments: sl(), cancelAppointment: sl()),
+  );
 
   // Use cases
   sl.registerLazySingleton(
@@ -67,6 +75,8 @@ Future<void> init() async {
   // Booking Use cases
   sl.registerLazySingleton(() => GetAvailableSlotsUseCase(repository: sl()));
   sl.registerLazySingleton(() => BookAppointmentUseCase(repository: sl()));
+  sl.registerLazySingleton(() => GetAppointmentsUseCase(repository: sl()));
+  sl.registerLazySingleton(() => CancelAppointmentUseCase(repository: sl()));
 
   // Auth Use cases
   sl.registerLazySingleton(() => LoginUseCase(sl()));
@@ -81,7 +91,7 @@ Future<void> init() async {
 
   // Booking Repository
   sl.registerLazySingleton<BookingRepository>(
-    () => BookingRepositoryImpl(remoteDataSource: sl()),
+    () => BookingRepositoryImpl(remoteDataSource: sl(), localDataSource: sl()),
   );
 
   // Auth Repository
@@ -94,9 +104,12 @@ Future<void> init() async {
     () => DoctorRemoteDataSourceImpl(),
   );
 
-  // Booking Data source
+  // Booking Data sources
   sl.registerLazySingleton<BookingRemoteDataSource>(
     () => BookingRemoteDataSourceImpl(),
+  );
+  sl.registerLazySingleton<BookingLocalDataSource>(
+    () => BookingLocalDataSourceImpl(),
   );
 
   // Auth Data sources
@@ -104,8 +117,12 @@ Future<void> init() async {
     () => AuthRemoteDataSourceImpl(),
   );
   sl.registerLazySingleton<AuthLocalDataSource>(
-    () => AuthLocalDataSourceImpl(),
+    () => AuthLocalDataSourceImpl(sharedPreferences: sl()),
   );
+
+  // External Dependencies
+  final sharedPreferences = await SharedPreferences.getInstance();
+  sl.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
 
   // Firebase Services
   //! External: :-----------------------------------

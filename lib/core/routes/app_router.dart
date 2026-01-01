@@ -6,6 +6,7 @@ import '../../features/auth/presentation/pages/signup_page.dart';
 import '../../features/auth/presentation/pages/profile_page.dart';
 import '../../features/auth/presentation/pages/settings_page.dart';
 import '../../features/appointment/presentation/pages/booking_page.dart';
+import '../../features/appointment/presentation/pages/my_appointments_page.dart';
 import '../../features/auth/presentation/blocs/auth/auth_bloc.dart';
 import 'app_routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -50,9 +51,7 @@ class AppRouter {
             routes: [
               GoRoute(
                 path: AppRoutes.myAppointments,
-                builder: (context, state) => const Scaffold(
-                  body: Center(child: Text('My Appointments Page')),
-                ),
+                builder: (context, state) => const MyAppointmentsPage(),
               ),
             ],
           ),
