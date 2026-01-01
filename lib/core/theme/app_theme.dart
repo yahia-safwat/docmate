@@ -28,15 +28,15 @@ class AppTheme {
       tertiaryContainer: Color(0xffffffff),
       errorContainer: Color(0xfffcd8df),
       onErrorContainer: Color(0xff000000),
-      surfaceVariant: Color(0xffeeeeee),
+      surfaceContainerHighest: Color(0xffeeeeee),
       outline: Color(0xff737373),
       outlineVariant: Color(0xffbfbfbf),
       inverseSurface: Color(0xff121212),
       surfaceTint: Color(0xff909cdf),
       error: Color(0xFF5e162e),
       onError: Color(0xFFf5e9ed),
-      background: Color(0xFFFFFFFF),
-      onBackground: Color(0xff000000),
+      // background: Color(0xFFFFFFFF),
+      // onBackground: Color(0xff000000),
       surface: Color(0xFFf4f5fc),
       onSurface: Color(0xFF0e1016),
     );
@@ -64,7 +64,7 @@ class AppTheme {
   static InputDecorationTheme get _inputDecorationTheme {
     return InputDecorationTheme(
       filled: true,
-      fillColor: _colorScheme.background,
+      fillColor: _colorScheme.surface,
       border: InputBorder.none,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 12.0,
@@ -80,25 +80,23 @@ class AppTheme {
     return FilledButtonThemeData(
       style: FilledButton.styleFrom(
         foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       ),
     );
   }
 
   static InputBorder get _enabledBorder => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.0),
-        borderSide: const BorderSide(color: Colors.transparent),
-      );
+    borderRadius: BorderRadius.circular(8.0),
+    borderSide: const BorderSide(color: Colors.transparent),
+  );
 
   static InputBorder get _focusedBorder => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.0),
-        borderSide: BorderSide.none,
-      );
+    borderRadius: BorderRadius.circular(8.0),
+    borderSide: BorderSide.none,
+  );
 
   static InputBorder get _disabledBorder => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.0),
-        borderSide: BorderSide(color: Colors.grey.withOpacity(0.2)),
-      );
+    borderRadius: BorderRadius.circular(8.0),
+    borderSide: BorderSide(color: Colors.grey.withValues(alpha: 0.2)),
+  );
 }

@@ -10,7 +10,7 @@ class MainNavBar extends StatelessWidget {
 
     return BottomNavigationBar(
       selectedItemColor: colorScheme.primary,
-      unselectedItemColor: colorScheme.onBackground.withOpacity(0.5),
+      unselectedItemColor: colorScheme.onSurface.withValues(alpha: 0.5),
       showSelectedLabels: true,
       showUnselectedLabels: true,
       unselectedFontSize: 14,
@@ -30,10 +30,7 @@ class MainNavBar extends StatelessWidget {
         }
       },
       items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Discover',
-        ),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Discover'),
         BottomNavigationBarItem(
           icon: Icon(Icons.explore_outlined),
           label: 'Explore',
@@ -42,10 +39,7 @@ class MainNavBar extends StatelessWidget {
           icon: Icon(Icons.calendar_month_outlined),
           label: 'Booking',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.chat_outlined),
-          label: 'Chat',
-        ),
+        BottomNavigationBarItem(icon: Icon(Icons.chat_outlined), label: 'Chat'),
         BottomNavigationBarItem(
           icon: Icon(Icons.person_outline),
           label: 'Profile',

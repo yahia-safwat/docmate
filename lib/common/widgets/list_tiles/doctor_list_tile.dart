@@ -5,10 +5,7 @@ import '../../../core/routes/app_routes.dart';
 import '../../../features/doctor/domain/entities/doctor.dart';
 
 class DoctorListTile extends StatelessWidget {
-  const DoctorListTile({
-    super.key,
-    required this.doctor,
-  });
+  const DoctorListTile({super.key, required this.doctor});
 
   final Doctor doctor;
 
@@ -19,13 +16,14 @@ class DoctorListTile extends StatelessWidget {
     return ListTile(
       // Add navigation
       onTap: () {
-        context
-            .push(AppRoutes.doctorDetails.replaceFirst(':doctorId', doctor.id));
+        context.push(
+          AppRoutes.doctorDetails.replaceFirst(':doctorId', doctor.id),
+        );
       },
       contentPadding: EdgeInsets.zero,
       leading: CircleAvatar(
         radius: 30.0,
-        backgroundColor: colorScheme.background,
+        backgroundColor: colorScheme.surface,
         backgroundImage: NetworkImage(doctor.profileImageUrl),
       ),
       title: Text(
@@ -38,20 +36,21 @@ class DoctorListTile extends StatelessWidget {
           const SizedBox(height: 4.0),
           Text(
             doctor.category.name,
-            style: textTheme.bodyMedium!.copyWith(
-              color: colorScheme.secondary,
-            ),
+            style: textTheme.bodyMedium!.copyWith(color: colorScheme.secondary),
           ),
           const SizedBox(height: 8.0),
           Row(
             children: [
-              const Icon(Icons.star,
-                  color: Color.fromRGBO(255, 204, 128, 1), size: 16),
+              const Icon(
+                Icons.star,
+                color: Color.fromRGBO(255, 204, 128, 1),
+                size: 16,
+              ),
               const SizedBox(width: 4.0),
               Text(
                 doctor.rating.toString(),
                 style: textTheme.bodySmall!.copyWith(
-                  color: colorScheme.onBackground.withOpacity(0.5),
+                  color: colorScheme.onSurface.withValues(alpha: 0.5),
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -61,7 +60,7 @@ class DoctorListTile extends StatelessWidget {
               Text(
                 '3 years',
                 style: textTheme.bodySmall!.copyWith(
-                  color: colorScheme.onBackground.withOpacity(.5),
+                  color: colorScheme.onSurface.withValues(alpha: .5),
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -69,10 +68,7 @@ class DoctorListTile extends StatelessWidget {
           ),
         ],
       ),
-      trailing: FilledButton(
-        onPressed: () {},
-        child: const Text('Book Now'),
-      ),
+      trailing: FilledButton(onPressed: () {}, child: const Text('Book Now')),
     );
   }
 }

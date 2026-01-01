@@ -30,20 +30,20 @@ class DoctorWorkingHoursView extends StatelessWidget {
           itemBuilder: (context, index) {
             return Row(
               children: [
-                Expanded(
-                  child: Text(workingHours[index].dayOfWeek),
-                ),
+                Expanded(child: Text(workingHours[index].dayOfWeek)),
                 const SizedBox(width: 16.0),
                 Container(
                   padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    border: Border.all(color: colorScheme.surfaceVariant),
+                    border: Border.all(
+                      color: colorScheme.surfaceContainerHighest,
+                    ),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Text(
                     workingHours[index].startTime.toCustomString(),
                     style: textTheme.bodySmall!.copyWith(
-                      color: colorScheme.onBackground.withOpacity(.5),
+                      color: colorScheme.onSurface.withValues(alpha: .5),
                     ),
                   ),
                 ),
@@ -53,13 +53,15 @@ class DoctorWorkingHoursView extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    border: Border.all(color: colorScheme.surfaceVariant),
+                    border: Border.all(
+                      color: colorScheme.surfaceContainerHighest,
+                    ),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Text(
                     workingHours[index].endTime.toCustomString(),
                     style: textTheme.bodySmall!.copyWith(
-                      color: colorScheme.onBackground.withOpacity(.5),
+                      color: colorScheme.onSurface.withValues(alpha: .5),
                     ),
                   ),
                 ),

@@ -23,7 +23,10 @@ class DoctorDetailsBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DoctorCard(doctor: doctor),
-                Divider(height: 32.0, color: colorScheme.surfaceVariant),
+                Divider(
+                  height: 32.0,
+                  color: colorScheme.surfaceContainerHighest,
+                ),
                 DoctorWorkingHoursView(workingHours: doctor.workingHours),
               ],
             ),

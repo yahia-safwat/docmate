@@ -26,7 +26,7 @@ class NearbyDoctors extends StatelessWidget {
           separatorBuilder: (context, index) {
             return Divider(
               height: 24.0,
-              color: colorScheme.surfaceVariant,
+              color: colorScheme.surfaceContainerHighest,
             );
           },
           itemCount: nearbyDoctors.length,

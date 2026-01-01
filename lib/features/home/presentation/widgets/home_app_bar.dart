@@ -14,10 +14,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            'Welcome',
-            style: textTheme.bodyMedium,
-          ),
+          Text('Welcome', style: textTheme.bodyMedium),
           const SizedBox(height: 4.0),
           Text(
             'Ahmed Yahia',
@@ -26,10 +23,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           const SizedBox(height: 4.0),
           Row(
             children: [
-              Icon(
-                Icons.location_on,
-                color: colorScheme.secondary,
-              ),
+              Icon(Icons.location_on, color: colorScheme.secondary),
               const SizedBox(width: 4.0),
               Text(
                 'Dubai, UAE',
@@ -38,10 +32,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               const SizedBox(width: 4.0),
-              Icon(
-                Icons.expand_more,
-                color: colorScheme.secondary,
-              ),
+              Icon(Icons.expand_more, color: colorScheme.secondary),
             ],
           ),
         ],
@@ -70,7 +61,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 child: Icon(
                   Icons.filter_alt_outlined,
-                  color: colorScheme.surfaceVariant,
+                  color: colorScheme.surfaceContainerHighest,
                 ),
               ),
             ),

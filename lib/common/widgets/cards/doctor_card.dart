@@ -32,11 +32,7 @@ class _DoctorCardState extends State<DoctorCard> {
         'label': 'Patients',
         'value': widget.doctor.patientCount,
       },
-      {
-        'icon': Icons.star_border,
-        'label': 'Experience',
-        'value': '3 years',
-      },
+      {'icon': Icons.star_border, 'label': 'Experience', 'value': '3 years'},
       {
         'icon': Icons.favorite_border,
         'label': 'Rating',
@@ -46,7 +42,7 @@ class _DoctorCardState extends State<DoctorCard> {
         'icon': Icons.numbers,
         'label': 'Reviews',
         'value': widget.doctor.reviewCount,
-      }
+      },
     ];
 
     return Card(
@@ -60,7 +56,7 @@ class _DoctorCardState extends State<DoctorCard> {
             children: [
               CircleAvatar(
                 radius: 48.0,
-                backgroundColor: colorScheme.background,
+                backgroundColor: colorScheme.surface,
                 backgroundImage: NetworkImage(widget.doctor.profileImageUrl),
               ),
               const SizedBox(width: 16.0),
@@ -70,14 +66,15 @@ class _DoctorCardState extends State<DoctorCard> {
                   children: [
                     Text(
                       widget.doctor.name,
-                      style: textTheme.bodyLarge!
-                          .copyWith(fontWeight: FontWeight.bold),
+                      style: textTheme.bodyLarge!.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 4.0),
                     Text(
                       widget.doctor.category.name,
                       style: textTheme.bodyMedium!.copyWith(
-                        color: colorScheme.onBackground.withOpacity(.5),
+                        color: colorScheme.onSurface.withValues(alpha: .5),
                       ),
                     ),
                     const SizedBox(height: 8.0),
@@ -92,9 +89,9 @@ class _DoctorCardState extends State<DoctorCard> {
                         Text(
                           'New York, USA',
                           style: textTheme.bodySmall!.copyWith(
-                            color: colorScheme.onBackground.withOpacity(.5),
+                            color: colorScheme.onSurface.withValues(alpha: .5),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ],
@@ -102,22 +99,23 @@ class _DoctorCardState extends State<DoctorCard> {
               ),
             ],
           ),
-          Divider(height: 32.0, color: colorScheme.surfaceVariant),
+          Divider(height: 32.0, color: colorScheme.surfaceContainerHighest),
 
           // About
           ...widget.showAbout
               ? [
                   Text(
                     'About',
-                    style: textTheme.bodyLarge!
-                        .copyWith(fontWeight: FontWeight.bold),
+                    style: textTheme.bodyLarge!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 8.0),
                   Text(
                     widget.doctor.bio,
                     maxLines: showAll ? null : 3,
                     style: textTheme.bodyMedium!.copyWith(
-                      color: colorScheme.onBackground.withOpacity(.5),
+                      color: colorScheme.onSurface.withValues(alpha: .5),
                     ),
                   ),
                   TextButton(
@@ -164,23 +162,24 @@ class _DoctorCardState extends State<DoctorCard> {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: textTheme.bodyLarge!.copyWith(
-                                      color: colorScheme.primary,
-                                      fontWeight: FontWeight.bold),
+                                    color: colorScheme.primary,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
                                   e['label'] as String,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                )
+                                ),
                               ],
                             ),
                           ),
                         )
                         .toList(),
-                  )
+                  ),
                 ]
-              : []
+              : [],
         ],
       ),
     );

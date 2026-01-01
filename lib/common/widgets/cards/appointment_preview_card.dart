@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppointmentPreviewCard extends StatelessWidget {
-  const AppointmentPreviewCard({
-    super.key,
-    this.appointment,
-  });
+  const AppointmentPreviewCard({super.key, this.appointment});
 
   // Todo - Create the Appointment class
   final dynamic appointment;
@@ -23,10 +20,7 @@ class AppointmentPreviewCard extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [
-                colorScheme.primary,
-                colorScheme.tertiary,
-              ],
+              colors: [colorScheme.primary, colorScheme.tertiary],
             ),
           ),
           child: Column(
@@ -42,7 +36,7 @@ class AppointmentPreviewCard extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -50,7 +44,7 @@ class AppointmentPreviewCard extends StatelessWidget {
           height: 8.0,
           margin: const EdgeInsets.symmetric(horizontal: 12.0),
           decoration: BoxDecoration(
-            color: colorScheme.primary.withOpacity(0.25),
+            color: colorScheme.primary.withValues(alpha: 0.25),
             borderRadius: const BorderRadius.vertical(
               bottom: Radius.circular(8.0),
             ),
@@ -60,7 +54,7 @@ class AppointmentPreviewCard extends StatelessWidget {
           height: 8.0,
           margin: const EdgeInsets.symmetric(horizontal: 24.0),
           decoration: BoxDecoration(
-            color: colorScheme.primary.withOpacity(0.15),
+            color: colorScheme.primary.withValues(alpha: 0.15),
             borderRadius: const BorderRadius.vertical(
               bottom: Radius.circular(8.0),
             ),

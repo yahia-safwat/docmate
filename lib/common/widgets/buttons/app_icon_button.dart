@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppIconButton extends StatelessWidget {
-  const AppIconButton({
-    super.key,
-    required this.icon,
-    required this.onTap,
-  });
+  const AppIconButton({super.key, required this.icon, required this.onTap});
 
   final IconData icon;
   final VoidCallback onTap;
@@ -22,7 +18,7 @@ class AppIconButton extends StatelessWidget {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            color: colorScheme.onBackground.withOpacity(0.05),
+            color: colorScheme.onSurface.withValues(alpha: 0.05),
           ),
         ),
         child: Icon(icon, size: 24),
