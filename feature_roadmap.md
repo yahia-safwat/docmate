@@ -34,15 +34,15 @@ This roadmap breaks down the missing features into modular components, following
 
 ---
 
-## 5. Feature: Explore & Search
+## 5. Feature: Explore & Search [x]
 **Objective:** Advanced doctor discovery.
-- **Domain:** `SearchDoctorsUseCase`, `FilterDoctorsUseCase`.
-- **Data:** `DoctorRepositoryImpl` (Extend existing).
-- **Presentation:** `SearchBloc`, `GlobalSearchPage`, `FilterBottomSheet`.
+- [x] Domain: `SearchDoctorsUseCase`, `FilterDoctorsUseCase`.
+- [x] Data: `DoctorRepositoryImpl` (Extended).
+- [x] Presentation: `SearchBloc`, `GlobalSearchPage`, `FilterBottomSheet`.
 
 ---
 
-## 6. Feature: Chat / Communication
+## 6. Feature: Chat / Communication [/]
 **Objective:** Real-time messaging with doctors.
 - **Domain:** `MessageEntity`, `SendMessageUseCase`, `GetMessagesUseCase`.
 - **Data:** `ChatRepositoryImpl`, `ChatRemoteDataSource` (e.g., Firebase).
@@ -60,5 +60,5 @@ This roadmap breaks down the missing features into modular components, following
 
 ## Current Focus
 > [!IMPORTANT]
-> **Priority 3: Appointment Booking**
-> We are now implementing the end-to-end booking flow, starting from slot selection to booking confirmation.
+> **Priority 6: Chat / Communication**
+> We are now implementing the real-time messaging feature between doctors and patients.

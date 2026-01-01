@@ -3,6 +3,7 @@ import '../../../../core/enums/doctor_category.dart';
 import '../../../../core/errors/failures.dart';
 import '../../domain/entities/doctor.dart';
 import '../../domain/repositories/doctor_repository.dart';
+import '../../domain/usecases/filter_doctors_usecase.dart';
 import '../data_sources/doctor_remote_data_source.dart';
 
 class DoctorRepositoryImpl implements DoctorRepository {
@@ -40,7 +41,8 @@ class DoctorRepositoryImpl implements DoctorRepository {
 
   @override
   Future<Either<Failure, List<Doctor>>> fetchDoctorsByCategory(
-      String categoryId) async {
+    String categoryId,
+  ) async {
     try {
       // Simulate a delay
       await Future.delayed(const Duration(milliseconds: 300));
@@ -64,6 +66,28 @@ class DoctorRepositoryImpl implements DoctorRepository {
     } catch (e) {
       // Return a failure if there is an error
       return const Left(ServerFailure(message: 'Something went wrong'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<Doctor>>> searchDoctors(String query) async {
+    try {
+      final doctors = await remoteDataSource.searchDoctors(query);
+      return Right(doctors.map((doctor) => doctor.toEntity()).toList());
+    } catch (e) {
+      return const Left(ServerFailure(message: 'Search failed'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<Doctor>>> filterDoctors(
+    FilterParams params,
+  ) async {
+    try {
+      final doctors = await remoteDataSource.filterDoctors(params);
+      return Right(doctors.map((doctor) => doctor.toEntity()).toList());
+    } catch (e) {
+      return const Left(ServerFailure(message: 'Filtering failed'));
     }
   }
 }

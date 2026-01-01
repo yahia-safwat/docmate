@@ -8,6 +8,7 @@ import '../../features/auth/presentation/pages/settings_page.dart';
 import '../../features/appointment/presentation/pages/booking_page.dart';
 import '../../features/appointment/presentation/pages/my_appointments_page.dart';
 import '../../features/auth/presentation/blocs/auth/auth_bloc.dart';
+import '../../features/doctor/presentation/pages/global_search_page.dart';
 import 'app_routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -41,8 +42,7 @@ class AppRouter {
             routes: [
               GoRoute(
                 path: AppRoutes.explore,
-                builder: (context, state) =>
-                    const Scaffold(body: Center(child: Text('Explore Page'))),
+                builder: (context, state) => const GlobalSearchPage(),
               ),
             ],
           ),

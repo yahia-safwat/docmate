@@ -7,31 +7,50 @@ import '../blocs/my_appointments/my_appointments_event.dart';
 import '../blocs/my_appointments/my_appointments_state.dart';
 import '../../domain/entities/appointment.dart';
 
-class MyAppointmentsPage extends StatelessWidget {
+class MyAppointmentsPage extends StatefulWidget {
   const MyAppointmentsPage({super.key});
+
+  @override
+  State<MyAppointmentsPage> createState() => _MyAppointmentsPageState();
+}
+
+class _MyAppointmentsPageState extends State<MyAppointmentsPage>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => sl<MyAppointmentsBloc>()..add(FetchMyAppointments()),
-      child: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('My Appointments'),
-            bottom: const TabBar(
-              tabs: [
-                Tab(text: 'Upcoming'),
-                Tab(text: 'History'),
-              ],
-            ),
-          ),
-          body: const TabBarView(
-            children: [
-              AppointmentsListView(isUpcoming: true),
-              AppointmentsListView(isUpcoming: false),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('My Appointments'),
+          bottom: TabBar(
+            controller: _tabController,
+            tabs: const [
+              Tab(text: 'Upcoming'),
+              Tab(text: 'History'),
             ],
           ),
+        ),
+        body: TabBarView(
+          controller: _tabController,
+          children: const [
+            AppointmentsListView(isUpcoming: true),
+            AppointmentsListView(isUpcoming: false),
+          ],
         ),
       ),
     );

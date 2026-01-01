@@ -18,6 +18,9 @@ import '../../features/auth/domain/usecases/get_authenticated_user_usecase.dart'
 import '../../features/auth/domain/usecases/login_usecase.dart';
 import '../../features/auth/domain/usecases/logout_usecase.dart';
 import '../../features/auth/domain/usecases/signup_usecase.dart';
+import '../../features/doctor/domain/usecases/search_doctors_usecase.dart';
+import '../../features/doctor/domain/usecases/filter_doctors_usecase.dart';
+import '../../features/doctor/presentation/blocs/search/search_bloc.dart';
 import '../../features/auth/presentation/blocs/auth/auth_bloc.dart';
 import '../../features/auth/presentation/blocs/login/login_bloc.dart';
 import '../../features/appointment/data/data_sources/booking_local_data_source.dart';
@@ -59,6 +62,9 @@ Future<void> init() async {
   sl.registerFactory(
     () => MyAppointmentsBloc(getAppointments: sl(), cancelAppointment: sl()),
   );
+  sl.registerFactory(
+    () => SearchBloc(searchDoctors: sl(), filterDoctors: sl()),
+  );
 
   // Use cases
   sl.registerLazySingleton(
@@ -71,6 +77,8 @@ Future<void> init() async {
   sl.registerLazySingleton(
     () => FetchDoctorsByCategoryUseCase(doctorRepository: sl()),
   );
+  sl.registerLazySingleton(() => SearchDoctorsUseCase(sl()));
+  sl.registerLazySingleton(() => FilterDoctorsUseCase(sl()));
 
   // Booking Use cases
   sl.registerLazySingleton(() => GetAvailableSlotsUseCase(repository: sl()));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../domain/usecases/filter_doctors_usecase.dart';
 
 import '../../../../core/enums/consultation_mode.dart';
 import '../../../../core/enums/doctor_category.dart';
@@ -12,6 +13,8 @@ abstract class DoctorRemoteDataSource {
   Future<List<DoctorModel>> getDoctors();
   Future<List<DoctorModel>> getDoctorsByCategory(String categoryId);
   Future<DoctorModel> getDoctorById(String doctorId);
+  Future<List<DoctorModel>> searchDoctors(String query);
+  Future<List<DoctorModel>> filterDoctors(FilterParams params);
 }
 
 class DoctorRemoteDataSourceImpl implements DoctorRemoteDataSource {
@@ -37,6 +40,39 @@ class DoctorRemoteDataSourceImpl implements DoctorRemoteDataSource {
   Future<DoctorModel> getDoctorById(String doctorId) async {
     // Fetch a doctor by ID from a remote API or database
     return sampleDoctors.firstWhere((doctor) => doctor.id == doctorId);
+  }
+
+  @override
+  Future<List<DoctorModel>> searchDoctors(String query) async {
+    // Simulate a delay
+    await Future.delayed(const Duration(milliseconds: 500));
+    final lowercaseQuery = query.toLowerCase();
+    return sampleDoctors.where((doctor) {
+      return doctor.name.toLowerCase().contains(lowercaseQuery) ||
+          doctor.category.name.toLowerCase().contains(lowercaseQuery);
+    }).toList();
+  }
+
+  @override
+  Future<List<DoctorModel>> filterDoctors(FilterParams params) async {
+    // Simulate a delay
+    await Future.delayed(const Duration(milliseconds: 500));
+    return sampleDoctors.where((doctor) {
+      if (params.categories != null && params.categories!.isNotEmpty) {
+        if (!params.categories!.contains(doctor.category)) return false;
+      }
+      if (params.minRating != null) {
+        if (doctor.rating < params.minRating!) return false;
+      }
+      if (params.maxPrice != null) {
+        // Checking the first package's price as a simple mock filter
+        if (doctor.packages.isEmpty ||
+            doctor.packages.first.price > params.maxPrice!) {
+          return false;
+        }
+      }
+      return true;
+    }).toList();
   }
 }
 
