@@ -2,19 +2,19 @@
 
 This roadmap breaks down the missing features into modular components, following the Clean Architecture pattern (Domain, Data, Presentation). We will implement these one by one.
 
-## 1. Feature: Authentication
+## 1. Feature: Authentication [x]
 **Objective:** Enable user access and session management.
-- **Domain:** `AuthEntity`, `AuthRepository` interface, `LoginUseCase`, `SignupUseCase`, `LogoutUseCase`.
-- **Data:** `AuthModel`, `AuthRemoteDataSource`, `AuthRepositoryImpl`.
-- **Presentation:** `LoginBloc`, `SignupBloc`, `LoginPage`, `SignupPage`, `OnboardingScreen`.
+- [x] Domain: `AuthEntity`, `AuthRepository` interface, `LoginUseCase`, `SignupUseCase`, `LogoutUseCase`.
+- [x] Data: `AuthModel`, `AuthRemoteDataSource`, `AuthRepositoryImpl`.
+- [x] Presentation: `LoginBloc`, `SignupBloc`, `LoginPage`, `SignupPage`, `AuthBottomSheet`.
 
 ---
 
-## 2. Feature: User Profile & Settings
+## 2. Feature: User Profile & Settings [/]
 **Objective:** Manage user data and app preferences.
-- **Domain:** `UserEntity`, `UpdateProfileUseCase`, `GetAppSettingsUseCase`.
-- **Data:** `UserModel`, `UserRepositoryImpl`, `LocalSettingsDataSource`.
-- **Presentation:** `ProfileBloc`, `ProfilePage`, `EditProfilePage`, `SettingsPage`.
+- [ ] Domain: `UserEntity`, `UpdateProfileUseCase`.
+- [ ] Data: `UserRepositoryImpl`, `UserLocalDataSource`.
+- [ ] Presentation: `ProfileBloc`, `ProfilePage`, `SettingsPage`.
 
 ---
 
@@ -60,5 +60,5 @@ This roadmap breaks down the missing features into modular components, following
 
 ## Current Focus
 > [!IMPORTANT]
-> **Priority 1: Authentication**
-> Without Authentication, most user-specific features (Booking, Profile, Chat) cannot function correctly.
+> **Priority 2: User Profile & Settings**
+> We are now implementing the user profile management and settings to allow users to view their session data and customize the app.
